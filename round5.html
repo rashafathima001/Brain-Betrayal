@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Final Round</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<main class="game-page">
+
+    <div class="round-top">
+
+        <span>FINAL ROUND / 5</span>
+
+        <div class="progress">
+            <div style="width:100%"></div>
+        </div>
+
+    </div>
+
+    <section class="game-card">
+
+        <p class="eyebrow">💀 FINAL BRAIN BATTLE</p>
+
+        <h1>FINAL BATTLE</h1>
+
+        <p class="description">
+            You only have 2 seconds. Don't blink. 😭
+        </p>
+
+        <div id="memory" class="memory-box final-memory">
+            🕶️ 🍕 🐸 🍌 🎸 🔑 🧸 🌹 🎧 🚲
+        </div>
+
+        <div id="timer" class="timer">
+            2
+        </div>
+
+        <div id="question" class="question hidden">
+
+            <h2 id="questionText">Which object was present?</h2>
+
+            <div class="options">
+
+                <button data-answer="🎸">🎸</button>
+                <button data-answer="🐶">🐶</button>
+                <button data-answer="🍔">🍔</button>
+                <button data-answer="⚽">⚽</button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<script src="questionEngine.js"></script>
+<script src="round5.js"></script>
+
+</body>
+</html>

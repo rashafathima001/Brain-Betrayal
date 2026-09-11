@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Player Setup</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="page">
+
+        <section class="setup-card">
+
+            <div class="big-icon">👤</div>
+
+            <p class="eyebrow">PLAYER SETUP</p>
+
+            <h1>
+                WHO'S GETTING<br>
+                <span>BETRAYED?</span>
+            </h1>
+
+            <p class="description">
+                Enter your name and prepare to question
+                everything you know.
+            </p>
+
+            <input
+                type="text"
+                id="playerName"
+                placeholder="Your name"
+                maxlength="20"
+            >
+
+            <input
+                type="text"
+                id="friendName"
+                placeholder="Friend's name (optional)"
+                maxlength="20"
+            >
+
+            <button
+                id="startButton"
+                class="main-btn"
+            >
+                I'M READY 😎
+            </button>
+
+            <button
+                class="text-btn"
+                onclick="location.href='index.html'"
+            >
+                ← Go Back
+            </button>
+
+        </section>
+
+    </main>
+
+    <script src="setup.js"></script>
+
+</body>
+</html>

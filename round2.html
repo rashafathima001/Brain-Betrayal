@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Round 2</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<main class="game-page">
+
+    <div class="round-top">
+
+        <span>ROUND 2 / 5</span>
+
+        <div class="progress">
+            <div style="width:40%"></div>
+        </div>
+
+    </div>
+
+    <section class="game-card">
+
+        <p class="eyebrow">👀 ATTENTION TEST</p>
+
+        <h1>DON'T GET DISTRACTED</h1>
+
+        <p class="description">
+            Remember what was next to the headphones.
+        </p>
+
+        <div id="memory" class="memory-box">
+            🍌 &nbsp; 🎧 &nbsp; 🐸 &nbsp; 🍕 &nbsp; 🔑 &nbsp; 🍎
+        </div>
+
+        <div id="timer" class="timer">
+            5
+        </div>
+
+        <div id="question" class="question hidden">
+
+            <h2 id="questionText">What was next to 🎧?</h2>
+
+            <div class="options">
+
+                <button data-answer="🍌">🍌</button>
+                <button data-answer="🐸">🐸</button>
+                <button data-answer="🔑">🔑</button>
+                <button data-answer="🍎">🍎</button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<script src="questionEngine.js"></script>
+<script src="round2.js"></script>
+
+</body>
+</html>

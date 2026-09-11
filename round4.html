@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Round 4</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<main class="game-page">
+
+    <div class="round-top">
+
+        <span>ROUND 4 / 5</span>
+
+        <div class="progress">
+            <div style="width:80%"></div>
+        </div>
+
+    </div>
+
+    <section class="game-card">
+
+        <p class="eyebrow">🤯 BRAIN TRAP</p>
+
+        <h1>DON'T TRUST YOUR BRAIN</h1>
+
+        <p class="description">
+            Read this sentence carefully.
+        </p>
+
+        <div id="memory" class="sentence-box">
+            THE BLUE CAT ATE THE RED BANANA.
+        </div>
+
+        <div id="timer" class="timer">
+            5
+        </div>
+
+        <div id="question" class="question hidden">
+
+            <h2 id="questionText">What color was the CAT?</h2>
+
+            <div class="options">
+
+                <button data-answer="BLUE">
+                    🔵 BLUE
+                </button>
+
+                <button data-answer="RED">
+                    🔴 RED
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<script src="questionEngine.js"></script>
+<script src="round4.js"></script>
+
+</body>
+</html>

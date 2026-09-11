@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Brain Reaction</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<main class="page">
+
+    <section class="reaction-card">
+
+        <div id="reactionEmoji" class="reaction-emoji">
+            🧠
+        </div>
+
+        <p class="eyebrow" id="verdictEyebrow">
+            ROUND VERDICT
+        </p>
+
+        <h1 id="reactionTitle">
+            CHECKING...
+        </h1>
+
+        <div id="confidenceBadge" class="confidence-badge">
+            <span>🎯 Confidence:</span>
+            <strong id="confidenceLocked">50%</strong>
+        </div>
+
+        <div>
+            <span id="scoreDeltaBadge" class="score-delta-badge score-delta-plus">
+                +20 POINTS
+            </span>
+        </div>
+
+        <div class="gif-box">
+
+            <div id="gifFallback" style="display: none;">
+                😂
+            </div>
+
+            <img
+                id="reactionGif"
+                src="./reactions/correct/hype1.gif"
+                alt="Reaction"
+            >
+
+        </div>
+
+        <p id="reactionText">
+            Let's see how badly your brain betrayed you.
+        </p>
+
+        <button
+            id="continueButton"
+            class="main-btn"
+            style="width: 100%;"
+        >
+            CONTINUE →
+        </button>
+
+    </section>
+
+</main>
+
+<script src="reaction.js"></script>
+
+</body>
+</html>
