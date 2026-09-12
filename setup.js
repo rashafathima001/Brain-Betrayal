@@ -8,9 +8,15 @@ startButton.addEventListener("click", function () {
     const friend = friendName.value.trim();
 
     if (player === "") {
+        if (typeof AudioManager !== "undefined") AudioManager.playFail();
         alert("Bro 😭 enter your name first!");
         playerName.focus();
         return;
+    }
+
+    if (typeof AudioManager !== "undefined") {
+        AudioManager.playTick();
+        AudioManager.startBgm();
     }
 
     // Store player information
@@ -24,4 +30,14 @@ startButton.addEventListener("click", function () {
     localStorage.setItem("usedGifs", "[]");
 
     location.href = "round1.html";
+});
+
+[playerName, friendName].forEach(input => {
+    if (input) {
+        input.addEventListener("keydown", function (e) {
+            if (e.key === "Enter") {
+                startButton.click();
+            }
+        });
+    }
 });

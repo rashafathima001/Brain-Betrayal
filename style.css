@@ -473,26 +473,32 @@ input {
 
 
 .timer {
-    width: 55px;
-
-    height: 55px;
-
+    width: 65px;
+    height: 65px;
     display: flex;
-
     justify-content: center;
-
     align-items: center;
-
     border-radius: 50%;
-
-    background:
-        rgba(255,255,255,0.08);
-
+    background: rgba(255, 255, 255, 0.08);
+    border: 2px solid rgba(255, 107, 197, 0.4);
+    box-shadow: 0 0 15px rgba(255, 107, 197, 0.25);
     color: #ff6bc5;
+    font-weight: 900;
+    font-size: 26px;
+    margin: 10px auto;
+    transition: all 0.25s ease;
+}
 
-    font-weight: bold;
+.timer.urgent {
+    color: #ff4757;
+    border-color: #ff4757;
+    box-shadow: 0 0 25px rgba(255, 71, 87, 0.7);
+    animation: pulseTimer 0.5s infinite alternate;
+}
 
-    font-size: 23px;
+@keyframes pulseTimer {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.15); }
 }
 
 
@@ -1029,4 +1035,151 @@ input {
 @keyframes popUpModal {
     from { transform: scale(0.82); opacity: 0; }
     to { transform: scale(1); opacity: 1; }
+}
+
+
+/* =========================
+   FLOATING BGM MUSIC WIDGET
+========================= */
+
+.bgm-widget {
+    position: fixed;
+    top: 18px;
+    right: 20px;
+    z-index: 10000;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 30px;
+    background: rgba(28, 15, 42, 0.85);
+    border: 1px solid rgba(214, 108, 255, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: white;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+    transition: all 0.25s ease;
+}
+
+.bgm-widget:hover {
+    background: rgba(214, 108, 255, 0.25);
+    border-color: #d66cff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(214, 108, 255, 0.35);
+}
+
+.bgm-icon {
+    font-size: 14px;
+}
+
+.bgm-bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 2.5px;
+    height: 12px;
+}
+
+.bgm-bars .bar {
+    width: 2.5px;
+    background: #d66cff;
+    border-radius: 2px;
+    animation: equalize 0.8s ease-in-out infinite alternate;
+}
+
+.bgm-bars .bar1 { height: 4px; animation-delay: 0.1s; }
+.bgm-bars .bar2 { height: 12px; animation-delay: 0.3s; }
+.bgm-bars .bar3 { height: 7px; animation-delay: 0.2s; }
+
+.bgm-bars.muted .bar {
+    animation: none;
+    height: 2px;
+    background: #666;
+}
+
+@keyframes equalize {
+    0% { height: 3px; }
+    100% { height: 12px; }
+}
+
+
+/* =========================
+   FRIEND CHALLENGE CARD
+========================= */
+
+.friend-challenge-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 20px auto;
+    max-width: 500px;
+    padding: 16px 20px;
+    border-radius: 20px;
+    background: rgba(214, 108, 255, 0.1);
+    border: 1px solid rgba(214, 108, 255, 0.35);
+    text-align: left;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.challenge-icon {
+    font-size: 32px;
+}
+
+.challenge-body strong {
+    display: block;
+    color: #e2a8ff;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    margin-bottom: 4px;
+}
+
+.challenge-body p {
+    font-size: 13px;
+    color: #ccc;
+    line-height: 1.4;
+    margin: 0;
+}
+
+
+/* =========================
+   CONFETTI & VISUAL POLISH
+========================= */
+
+.confetti-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9998;
+}
+
+.pulse-glow {
+    animation: brainPulse 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes brainPulse {
+    0% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 15px rgba(214, 108, 255, 0.35));
+    }
+    100% {
+        transform: scale(1.08);
+        filter: drop-shadow(0 0 35px rgba(214, 108, 255, 0.8));
+    }
+}
+
+.glow-btn {
+    box-shadow: 0 0 25px rgba(214, 108, 255, 0.4);
+    transition: all 0.25s ease;
+}
+
+.glow-btn:hover {
+    box-shadow: 0 0 35px rgba(214, 108, 255, 0.75);
+    transform: translateY(-3px);
 }

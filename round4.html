@@ -31,12 +31,12 @@
 
         <h1>DON'T TRUST YOUR BRAIN</h1>
 
-        <p class="description">
+        <p id="roundDesc" class="description">
             Read this sentence carefully.
         </p>
 
         <div id="memory" class="sentence-box">
-            THE BLUE CAT ATE THE RED BANANA.
+            🧠 Loading brain teaser...
         </div>
 
         <div id="timer" class="timer">
@@ -45,18 +45,10 @@
 
         <div id="question" class="question hidden">
 
-            <h2 id="questionText">What color was the CAT?</h2>
+            <h2 id="questionText">Which color was it?</h2>
 
             <div class="options">
-
-                <button data-answer="BLUE">
-                    🔵 BLUE
-                </button>
-
-                <button data-answer="RED">
-                    🔴 RED
-                </button>
-
+                <!-- Dynamically populated -->
             </div>
 
         </div>
@@ -65,6 +57,7 @@
 
 </main>
 
+<script src="audioManager.js"></script>
 <script src="questionEngine.js"></script>
 <script src="round4.js"></script>
 

@@ -14,11 +14,13 @@
 
 <body>
 
+<canvas id="confettiCanvas" class="confetti-canvas"></canvas>
+
 <main class="page">
 
     <section class="result-card">
 
-        <div class="trophy">
+        <div class="trophy" id="trophyIcon">
             🏆
         </div>
 
@@ -76,9 +78,18 @@
             Calculating brain damage...
         </p>
 
+        <div id="friendChallengeBox" class="friend-challenge-card hidden">
+            <span class="challenge-icon">⚔️</span>
+            <div class="challenge-body">
+                <strong id="friendChallengeTitle">FRIEND CHALLENGE!</strong>
+                <p id="friendChallengeText">Think you beat your friend? Take a screenshot and send it!</p>
+            </div>
+        </div>
+
         <button
             class="main-btn"
             onclick="location.href='setup.html'"
+            style="width: 100%; margin-top: 15px;"
         >
             PLAY AGAIN 🔄
         </button>
@@ -89,13 +100,14 @@
             class="text-btn"
             onclick="location.href='index.html'"
         >
-            HOME
+            ← Back to Home
         </button>
 
     </section>
 
 </main>
 
+<script src="audioManager.js"></script>
 <script src="result.js"></script>
 
 </body>

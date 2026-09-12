@@ -29,12 +29,12 @@
 
         <h1>THE MEMORY TRAP</h1>
 
-        <p class="description">
-            One fruit below is NOT actually there.
+        <p id="roundDesc" class="description">
+            One item below is NOT actually there.
         </p>
 
         <div id="memory" class="memory-box">
-            🍎 &nbsp; 🍌 &nbsp; 🍉 &nbsp; 🍓 &nbsp; 🍇
+            🧠 Loading category items...
         </div>
 
         <div id="timer" class="timer">
@@ -43,15 +43,10 @@
 
         <div id="question" class="question hidden">
 
-            <h2 id="questionText">Which fruit was NOT shown?</h2>
+            <h2 id="questionText">Which item was NOT shown?</h2>
 
             <div class="options">
-
-                <button data-answer="🍊">🍊</button>
-                <button data-answer="🍎">🍎</button>
-                <button data-answer="🍇">🍇</button>
-                <button data-answer="🍓">🍓</button>
-
+                <!-- Populated dynamically -->
             </div>
 
         </div>
@@ -60,6 +55,7 @@
 
 </main>
 
+<script src="audioManager.js"></script>
 <script src="questionEngine.js"></script>
 <script src="round3.js"></script>
 

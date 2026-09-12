@@ -107,6 +107,10 @@ if (correct) {
     scoreDeltaBadge.textContent = "+20 POINTS";
     scoreDeltaBadge.className = "score-delta-badge score-delta-plus";
     gifFallback.textContent = "🔥";
+
+    if (typeof AudioManager !== "undefined") {
+        AudioManager.playSuccess();
+    }
 }
 else if (confidence >= 80) {
     category = "confidentWrong";
@@ -117,6 +121,10 @@ else if (confidence >= 80) {
     scoreDeltaBadge.textContent = "-5 PTS PENALTY";
     scoreDeltaBadge.className = "score-delta-badge score-delta-minus";
     gifFallback.textContent = "💀";
+
+    if (typeof AudioManager !== "undefined") {
+        AudioManager.playFail();
+    }
 }
 else {
     category = "wrong";
@@ -127,6 +135,10 @@ else {
     scoreDeltaBadge.textContent = "+0 POINTS";
     scoreDeltaBadge.className = "score-delta-badge score-delta-minus";
     gifFallback.textContent = "😂";
+
+    if (typeof AudioManager !== "undefined") {
+        AudioManager.playFail();
+    }
 }
 
 // Set Unique GIF
@@ -145,6 +157,9 @@ if (round < 5) {
 }
 
 continueButton.addEventListener("click", function () {
+    if (typeof AudioManager !== "undefined") {
+        AudioManager.playTick();
+    }
     continueButton.disabled = true;
     continueButton.textContent = "LOADING...";
 

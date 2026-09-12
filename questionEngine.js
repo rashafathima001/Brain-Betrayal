@@ -104,30 +104,32 @@ const QuestionEngine = (function () {
     // ROUND 2: Spatial Neighbor Attention (6 items in row, ask for neighbor)
     function generateRound2() {
         const all = getAllEmojis();
-        let memoryItems, anchorIdx, anchor, neighbor, key;
+        let memoryItems, anchorIdx, anchor, neighbor, directionWord, key;
         let attempts = 0;
 
         do {
             memoryItems = pickRandom(all, 6);
             anchorIdx = Math.floor(Math.random() * 4) + 1; // index 1, 2, 3, or 4
             anchor = memoryItems[anchorIdx];
-            // 50% left neighbor or right neighbor
+            // Clear direction: Left or Right
             const pickRight = Math.random() > 0.5;
             neighbor = pickRight ? memoryItems[anchorIdx + 1] : memoryItems[anchorIdx - 1];
-            key = `${memoryItems.join('')}_${anchor}_${neighbor}`;
+            directionWord = pickRight ? "to the RIGHT of" : "to the LEFT of";
+            key = `${memoryItems.join('')}_${anchor}_${directionWord}_${neighbor}`;
             attempts++;
         } while (isQuestionUsed(2, key) && attempts < 15);
 
         markQuestionUsed(2, key);
 
-        // Distractors: other items from memoryItems or all emojis
-        const remaining = all.filter(e => e !== anchor && e !== neighbor);
-        const distractors = pickRandom(remaining, 3);
+        // Distractors: other items from memoryItems (excluding anchor & neighbor so all 4 options were shown in the row)
+        const otherShownItems = memoryItems.filter(e => e !== anchor && e !== neighbor);
+        const distractors = pickRandom(otherShownItems, 3);
         const options = shuffle([neighbor, ...distractors]);
 
         return {
             memoryDisplay: memoryItems.join('   '),
-            questionText: `What was next to ${anchor}?`,
+            questionText: `What was directly ${directionWord} ${anchor}?`,
+            descriptionText: `Pay close attention to what's next to each item.`,
             correctAnswer: neighbor,
             options: options.map(opt => ({ text: opt, value: opt }))
         };
@@ -159,6 +161,7 @@ const QuestionEngine = (function () {
             categoryName: categoryName,
             memoryDisplay: shown.join('   '),
             questionText: `Which ${categoryName} was NOT shown?`,
+            descriptionText: `One ${categoryName.toLowerCase()} below is NOT actually there.`,
             correctAnswer: intruder,
             options: options.map(opt => ({ text: opt, value: opt }))
         };
@@ -298,6 +301,10 @@ const QuestionEngine = (function () {
 
         document.body.appendChild(overlay);
 
+        if (typeof AudioManager !== "undefined") {
+            AudioManager.playWhoosh();
+        }
+
         const slider = document.getElementById("popupConfidenceSlider");
         const numDisplay = document.getElementById("popupConfidenceNum");
         const statusPill = document.getElementById("modalStatusPill");
@@ -308,9 +315,15 @@ const QuestionEngine = (function () {
             numDisplay.textContent = val;
             const status = getConfidenceStatus(val);
             statusPill.textContent = `${status.emoji} ${status.label}`;
+            if (typeof AudioManager !== "undefined") {
+                AudioManager.playTick();
+            }
         });
 
         confirmBtn.addEventListener("click", function () {
+            if (typeof AudioManager !== "undefined") {
+                AudioManager.playTick();
+            }
             confirmBtn.disabled = true;
             confirmBtn.textContent = "CHECKING YOUR FATE... ⏳";
 

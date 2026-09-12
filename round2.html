@@ -29,12 +29,12 @@
 
         <h1>DON'T GET DISTRACTED</h1>
 
-        <p class="description">
-            Remember what was next to the headphones.
+        <p id="roundDesc" class="description">
+            Pay close attention to what's next to each item.
         </p>
 
         <div id="memory" class="memory-box">
-            🍌 &nbsp; 🎧 &nbsp; 🐸 &nbsp; 🍕 &nbsp; 🔑 &nbsp; 🍎
+            🧠 Loading items...
         </div>
 
         <div id="timer" class="timer">
@@ -43,15 +43,10 @@
 
         <div id="question" class="question hidden">
 
-            <h2 id="questionText">What was next to 🎧?</h2>
+            <h2 id="questionText">What was next to the item?</h2>
 
             <div class="options">
-
-                <button data-answer="🍌">🍌</button>
-                <button data-answer="🐸">🐸</button>
-                <button data-answer="🔑">🔑</button>
-                <button data-answer="🍎">🍎</button>
-
+                <!-- Populated dynamically -->
             </div>
 
         </div>
@@ -60,6 +55,7 @@
 
 </main>
 
+<script src="audioManager.js"></script>
 <script src="questionEngine.js"></script>
 <script src="round2.js"></script>
 

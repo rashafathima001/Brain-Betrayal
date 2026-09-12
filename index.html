@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Brain Betrayal</title>
+    <title>Brain Betrayal - The Ultimate Memory Game</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -13,7 +13,7 @@
 
     <main class="page home">
 
-        <div class="brain-icon">🧠</div>
+        <div class="brain-icon pulse-glow">🧠</div>
 
         <p class="eyebrow">THE ULTIMATE MEMORY TEST</p>
 
@@ -47,17 +47,31 @@
         </div>
 
         <button
-            class="main-btn"
-            onclick="location.href='setup.html'"
+            id="startBtn"
+            class="main-btn glow-btn"
+            onclick="startGame()"
         >
             START THE BETRAYAL →
         </button>
 
         <p class="warning">
-            ⚠️ Side effects may include embarrassment.
+            ⚠️ Side effects may include severe embarrassment.
         </p>
 
     </main>
+
+    <script src="audioManager.js"></script>
+    <script>
+        function startGame() {
+            if (typeof AudioManager !== "undefined") {
+                AudioManager.playTick();
+                AudioManager.startBgm();
+            }
+            setTimeout(function() {
+                location.href = 'setup.html';
+            }, 180);
+        }
+    </script>
 
 </body>
 </html>
