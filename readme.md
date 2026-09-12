@@ -56,7 +56,7 @@ Brain Betrayal solves this completely unnecessary problem by putting your brain 
 ### Screenshots
 <img src = "screenshot/home.png">
 <img src = "screenshot/round1.png">
-<img src = "screenshot/result.png>
+<img src = "screenshot/result.png">
 
 ### Workflow
 
